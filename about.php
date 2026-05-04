@@ -9,7 +9,7 @@ include 'includes/header.php';
     <div class="container page-hero-content">
         <span class="section-tag">Our Story</span>
         <h1>About <span class="gold-text">Pro Details</span></h1>
-        <p>Centurion's trusted detailing specialists</p>
+        <p>We are Centurion's trusted detailing specialists</p>
     </div>
 </section>
 
