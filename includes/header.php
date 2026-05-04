@@ -10,7 +10,7 @@ $site_email = 'hello@prodetails.co.za';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#f4efe6">
+    <meta name="theme-color" content="#d9dcdf">
     <meta name="description" content="Pro Details — Centurion's premier automotive detailing studio. Paint correction, ceramic coating and concours-grade detailing for discerning owners.">
     <meta name="keywords" content="car detailing centurion, paint correction pretoria, ceramic coating centurion, ppf gauteng, pro details">
     <meta property="og:title" content="Pro Details — Automotive Detailing Studio · Centurion">
@@ -21,10 +21,10 @@ $site_email = 'hello@prodetails.co.za';
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200..500;1,9..144,200..500&family=Geist:wght@200;300;400;500;600&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230e0e0c'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' font-style='italic' fill='%23f4efe6' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="/assets/css/style.css?v=<?php echo @filemtime(__DIR__ . '/../assets/css/style.css') ?: time(); ?>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23161616'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' font-style='italic' fill='%23e6e6e4' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
 </head>
 <body class="page-<?php echo $current_page; ?>">
 
