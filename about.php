@@ -1,169 +1,158 @@
 <?php
-$page_title = 'About Us';
+$page_title = 'Ethos';
 include 'includes/header.php';
 ?>
 
-<!-- Page Hero -->
+<!-- PAGE HERO -->
 <section class="page-hero">
-    <div class="page-hero-overlay"></div>
-    <div class="container page-hero-content">
-        <span class="section-tag">Our Story</span>
-        <h1>About <span class="gold-text">Pro Details</span></h1>
-        <p>We are Centurion's trusted detailing specialists</p>
+    <div class="container">
+        <div class="page-hero-grid">
+            <div class="reveal">
+                <div class="crumbs">
+                    <a href="index.php">Studio</a>
+                    <span class="sep">/</span>
+                    <span>Ethos</span>
+                </div>
+                <span class="eyebrow cognac">— About · 04</span>
+                <h1 class="display-1" style="margin-top:0.6rem;">A studio,<br>not a <em>car wash.</em></h1>
+                <p class="lede" style="margin-top:1.5rem;">Founded in 2017 in Centurion. One bay, a small team, and a long-standing obsession with paint.</p>
+            </div>
+            <div class="page-hero-image reveal reveal-d2" style="background-image:url('https://images.unsplash.com/photo-1632823469850-1b7b1e8b7e8e?auto=format&fit=crop&w=1200&q=80'),url('https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1200&q=80');background-size:cover;background-position:center;"></div>
+        </div>
     </div>
 </section>
 
-<!-- About Story -->
+<!-- MANIFESTO -->
+<section class="manifesto">
+    <div class="container">
+        <div class="manifesto-grid">
+            <aside class="manifesto-aside reveal">
+                <span class="num">— Story</span>
+                <h2 class="display-3">Started with one car<br>and a halogen lamp.</h2>
+                <p class="mono" style="color:var(--ink-mute);font-size:0.78rem;letter-spacing:0.1em;">Centurion · Since 2017</p>
+            </aside>
+            <div class="manifesto-body reveal reveal-d1">
+                <p>Pro Details started in a single garage in Centurion with a borrowed polisher and a stubborn refusal to leave swirl marks behind. Eight years later, that obsession is still the only thing on the wall of the studio.</p>
+                <p>We work on one car at a time. We use the products we'd put on our own cars. We learn from people who do this for a living, and we treat every booking — daily commuter or weekend hypercar — with the same patience.</p>
+                <p>This isn't volume work. <em>It's craft.</em> And we'd rather do twenty cars properly than two hundred quickly.</p>
+                <p class="manifesto-sig">— Founder, Pro Details Studio</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SHOWCASE / NUMBERS -->
+<section class="showcase">
+    <div class="container">
+        <div class="showcase-grid reverse">
+            <div class="showcase-text reveal">
+                <span class="eyebrow cognac">— By the numbers</span>
+                <h2 class="display-2">Eight years.<br>Five hundred <em>cars.</em></h2>
+                <p class="lede" style="margin-top:1.2rem;">We track everything: hours per car, paint readings, coating warranties, before-and-after photos. Every single car has a file.</p>
+                <ul class="showcase-list">
+                    <li><span class="li-num">2017</span><div><strong>Studio founded</strong><span>Single bay, single car at a time. Still our model.</span></div></li>
+                    <li><span class="li-num">500+</span><div><strong>Cars detailed</strong><span>From R2 daily drivers to seven-figure exotics.</span></div></li>
+                    <li><span class="li-num">5.0 ★</span><div><strong>Average review</strong><span>From owners who rebook season after season.</span></div></li>
+                    <li><span class="li-num">9yr</span><div><strong>Longest coating warranty</strong><span>Backed by certified Gyeon and Gtechniq application.</span></div></li>
+                </ul>
+            </div>
+            <div class="showcase-image reveal reveal-d1" style="background-image:url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1200&q=80');"></div>
+        </div>
+    </div>
+</section>
+
+<!-- VALUES -->
 <section class="section">
     <div class="container">
-        <div class="about-intro">
-            <div class="about-intro-image">
-                <div class="about-img-placeholder">
-                    <i class="fas fa-user-tie"></i>
-                    <p>Owner Photo Here</p>
-                </div>
-                <div class="about-img-badge">
-                    <i class="fas fa-award"></i>
-                    <span>Certified Detailing Professional</span>
-                </div>
+        <div class="section-head">
+            <div class="section-head-meta">
+                <span class="num">— Principles · 02</span>
+                <span class="eyebrow cognac">What drives us</span>
             </div>
-            <div class="about-intro-content">
-                <span class="section-tag">Who We Are</span>
-                <h2>Passion for <span class="gold-text">Perfection</span></h2>
-                <p class="lead-text">Pro Details was founded with one simple belief: every car deserves to be treated with the highest level of care and attention.</p>
-                <p>Based in the heart of Centurion, Gauteng, we have spent years perfecting our craft and building a reputation for delivering exceptional results — every single time. From daily drivers to luxury exotics, we approach every vehicle with the same obsessive attention to detail.</p>
-                <p>Our team is fully trained in the latest detailing techniques and uses only professional-grade products trusted by detailers worldwide. Whether you need a quick refresh or a full paint correction and ceramic coating, you're in expert hands.</p>
-                <div class="about-highlights">
-                    <div class="highlight-item">
-                        <span class="highlight-number">500+</span>
-                        <span class="highlight-label">Cars Detailed</span>
-                    </div>
-                    <div class="highlight-item">
-                        <span class="highlight-number">8+</span>
-                        <span class="highlight-label">Years Experience</span>
-                    </div>
-                    <div class="highlight-item">
-                        <span class="highlight-number">100%</span>
-                        <span class="highlight-label">Satisfaction Rate</span>
-                    </div>
-                </div>
+            <div>
+                <h2 class="display-2">The four things<br>we won't <em>compromise.</em></h2>
+            </div>
+        </div>
+
+        <div class="values-grid reveal">
+            <div class="value">
+                <span class="value-num">— 01</span>
+                <h3>Process over speed</h3>
+                <p>Every step gets the time it needs. If a panel needs a second pass, it gets a second pass. We don't watch the clock — we watch the paint.</p>
+            </div>
+            <div class="value">
+                <span class="value-num">— 02</span>
+                <h3>Honest scope</h3>
+                <p>We'll tell you when a coating is overkill, and when a wash is enough. Trust beats up-selling, every time.</p>
+            </div>
+            <div class="value">
+                <span class="value-num">— 03</span>
+                <h3>Best-in-class chemistry</h3>
+                <p>Gyeon, Koch-Chemie, Gtechniq, CarPro, Meguiar's. Only certified professional product lines come into the studio.</p>
+            </div>
+            <div class="value">
+                <span class="value-num">— 04</span>
+                <h3>Documented work</h3>
+                <p>Every detail is photographed before, during and after. You see exactly what was corrected, sealed and protected.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Our Values -->
-<section class="section values-section">
+<!-- PROCESS -->
+<section class="process">
     <div class="container">
-        <div class="section-header">
-            <span class="section-tag">What Drives Us</span>
-            <h2>Our <span class="gold-text">Values</span></h2>
+        <div class="section-head">
+            <div class="section-head-meta">
+                <span class="num">— Process · 03</span>
+                <span class="eyebrow cognac">From booking to collection</span>
+            </div>
+            <div>
+                <h2 class="display-2">Five steps. No <em>surprises.</em></h2>
+            </div>
         </div>
-        <div class="values-grid">
-            <div class="value-card">
-                <div class="value-icon"><i class="fas fa-gem"></i></div>
-                <h3>Premium Quality</h3>
-                <p>We never cut corners. We use only the best products, the best techniques and give every car the time it deserves.</p>
+
+        <div class="process-list reveal">
+            <div class="process-row">
+                <span class="process-num">01 — Book</span>
+                <h3 class="process-title">Reserve a slot.</h3>
+                <p class="process-desc">Book online, by phone, or on WhatsApp. We'll confirm same-day with availability and a recommended scope.</p>
             </div>
-            <div class="value-card">
-                <div class="value-icon"><i class="fas fa-handshake"></i></div>
-                <h3>Trust & Transparency</h3>
-                <p>Honest pricing, honest advice. We'll always tell you exactly what your car needs — nothing more, nothing less.</p>
+            <div class="process-row">
+                <span class="process-num">02 — Inspect</span>
+                <h3 class="process-title">Drop off &amp; inspect.</h3>
+                <p class="process-desc">When you drop off, we walk the car under studio lights. Existing damage logged, scope confirmed, final price agreed.</p>
             </div>
-            <div class="value-card">
-                <div class="value-icon"><i class="fas fa-medal"></i></div>
-                <h3>Passion for Excellence</h3>
-                <p>Detailing isn't just a job for us — it's a craft we're genuinely passionate about. That shows in every result.</p>
+            <div class="process-row">
+                <span class="process-num">03 — Detail</span>
+                <h3 class="process-title">Into the bay.</h3>
+                <p class="process-desc">Single car, undivided attention. We send progress photos at key stages so you know exactly what's happening.</p>
             </div>
-            <div class="value-card">
-                <div class="value-icon"><i class="fas fa-users"></i></div>
-                <h3>Client-First Always</h3>
-                <p>Your satisfaction is our priority. We go above and beyond to make sure you leave happy every single time.</p>
+            <div class="process-row">
+                <span class="process-num">04 — Inspect (again)</span>
+                <h3 class="process-title">Final QC.</h3>
+                <p class="process-desc">Every panel re-inspected under the swirl-finder light. Anything not perfect goes back on the polisher.</p>
+            </div>
+            <div class="process-row">
+                <span class="process-num">05 — Collect</span>
+                <h3 class="process-title">Hand-back &amp; aftercare.</h3>
+                <p class="process-desc">Walk-around at collection. Aftercare instructions, warranty documents (where applicable), and you're back on the road.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Our Process -->
-<section class="section process-section">
+<!-- BRANDS -->
+<section class="brands">
     <div class="container">
-        <div class="section-header">
-            <span class="section-tag">How It Works</span>
-            <h2>The Pro Details <span class="gold-text">Process</span></h2>
-            <p>From booking to collection — a seamless, professional experience.</p>
-        </div>
-        <div class="process-steps">
-            <div class="process-step">
-                <div class="step-number">01</div>
-                <div class="step-content">
-                    <h3>Book & Consult</h3>
-                    <p>Contact us online, by phone or WhatsApp. We'll discuss your car's condition, your goals and recommend the right service.</p>
-                </div>
-            </div>
-            <div class="process-connector"><i class="fas fa-chevron-right"></i></div>
-            <div class="process-step">
-                <div class="step-number">02</div>
-                <div class="step-content">
-                    <h3>Vehicle Inspection</h3>
-                    <p>When you drop off, we do a full inspection, note any existing damage and confirm the scope of work and pricing.</p>
-                </div>
-            </div>
-            <div class="process-connector"><i class="fas fa-chevron-right"></i></div>
-            <div class="process-step">
-                <div class="step-number">03</div>
-                <div class="step-content">
-                    <h3>Expert Detailing</h3>
-                    <p>Our certified technicians get to work. We keep you updated throughout the process with photos and progress reports.</p>
-                </div>
-            </div>
-            <div class="process-connector"><i class="fas fa-chevron-right"></i></div>
-            <div class="process-step">
-                <div class="step-number">04</div>
-                <div class="step-content">
-                    <h3>Final Inspection</h3>
-                    <p>Before collection, every vehicle goes through a rigorous quality check to ensure it meets the Pro Details standard.</p>
-                </div>
-            </div>
-            <div class="process-connector"><i class="fas fa-chevron-right"></i></div>
-            <div class="process-step">
-                <div class="step-number">05</div>
-                <div class="step-content">
-                    <h3>Collect & Admire</h3>
-                    <p>Your car is returned looking its absolute best. We walk you through everything done and provide aftercare advice.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Brands We Use -->
-<section class="section brands-section">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag">Products We Trust</span>
-            <h2>Professional <span class="gold-text">Grade Products</span></h2>
-            <p>We only use industry-leading brands trusted by professionals worldwide.</p>
-        </div>
+        <p class="eyebrow" style="text-align:center;display:block;margin-bottom:2rem;color:var(--ink-mute);">— Products We Trust</p>
         <div class="brands-grid">
-            <div class="brand-item"><i class="fas fa-star"></i><span>Gyeon</span></div>
-            <div class="brand-item"><i class="fas fa-star"></i><span>Koch-Chemie</span></div>
-            <div class="brand-item"><i class="fas fa-star"></i><span>Gtechniq</span></div>
-            <div class="brand-item"><i class="fas fa-star"></i><span>Meguiar's</span></div>
-            <div class="brand-item"><i class="fas fa-star"></i><span>Chemical Guys</span></div>
-            <div class="brand-item"><i class="fas fa-star"></i><span>CarPro</span></div>
-        </div>
-    </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-banner">
-    <div class="cta-overlay"></div>
-    <div class="container cta-content">
-        <h2>Experience the <span class="gold-text">Pro Details Difference</span></h2>
-        <p>Book your detail today and see why Centurion car owners trust us with their most prized possessions.</p>
-        <div class="cta-buttons">
-            <a href="contact.php" class="btn btn-gold">Book Now</a>
-            <a href="services.php" class="btn btn-white">Our Services</a>
+            <span class="brand-mark-item">Gyeon</span>
+            <span class="brand-mark-item">Koch-Chemie</span>
+            <span class="brand-mark-item">Gtechniq</span>
+            <span class="brand-mark-item">Meguiar's</span>
+            <span class="brand-mark-item">Chemical Guys</span>
+            <span class="brand-mark-item">CarPro</span>
         </div>
     </div>
 </section>

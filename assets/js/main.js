@@ -1,180 +1,137 @@
-/* Pro Details — Main JavaScript */
+/* Pro Details — Studio JS · v2.0 */
 
-document.addEventListener('DOMContentLoaded', function () {
+(function () {
+    'use strict';
 
-    // ── Sticky Navbar ──────────────────────────────────────────
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+    document.addEventListener('DOMContentLoaded', init);
+
+    function init() {
+        stickyHeader();
+        mobileNav();
+        revealOnScroll();
+        backToTop();
+        galleryFilter();
+        smoothAnchors();
+    }
+
+    /* Sticky header — adds shadow/state on scroll */
+    function stickyHeader() {
+        const header = document.getElementById('siteHeader');
+        if (!header) return;
+        const onScroll = () => {
+            header.classList.toggle('is-scrolled', window.scrollY > 12);
+        };
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+    }
+
+    /* Mobile nav toggle */
+    function mobileNav() {
+        const toggle = document.getElementById('navToggle');
+        const menu = document.getElementById('navMenu');
+        if (!toggle || !menu) return;
+
+        const close = () => {
+            toggle.classList.remove('is-open');
+            menu.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        };
+        const open = () => {
+            toggle.classList.add('is-open');
+            menu.classList.add('is-open');
+            toggle.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        };
+
+        toggle.addEventListener('click', () => {
+            menu.classList.contains('is-open') ? close() : open();
+        });
+
+        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && menu.classList.contains('is-open')) close();
+        });
+    }
+
+    /* Reveal-on-scroll using IntersectionObserver */
+    function revealOnScroll() {
+        const els = document.querySelectorAll('.reveal');
+        if (!('IntersectionObserver' in window) || !els.length) {
+            els.forEach(el => el.classList.add('is-in'));
+            return;
         }
-    });
-
-    // ── Mobile Nav Toggle ──────────────────────────────────────
-    const navToggle = document.getElementById('navToggle');
-    const navMenu   = document.getElementById('navMenu');
-
-    if (navToggle && navMenu) {
-        navToggle.addEventListener('click', function () {
-            navMenu.classList.toggle('open');
-            document.body.style.overflow = navMenu.classList.contains('open') ? 'hidden' : '';
-        });
-
-        // Close on link click
-        navMenu.querySelectorAll('a').forEach(function (link) {
-            link.addEventListener('click', function () {
-                navMenu.classList.remove('open');
-                document.body.style.overflow = '';
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-in');
+                    io.unobserve(entry.target);
+                }
             });
-        });
-
-        // Close on outside click
-        document.addEventListener('click', function (e) {
-            if (!navbar.contains(e.target)) {
-                navMenu.classList.remove('open');
-                document.body.style.overflow = '';
-            }
-        });
+        }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
+        els.forEach(el => io.observe(el));
     }
 
-    // ── Back to Top ────────────────────────────────────────────
-    const backToTop = document.getElementById('backToTop');
-    if (backToTop) {
-        window.addEventListener('scroll', function () {
-            if (window.scrollY > 400) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-        });
-        backToTop.addEventListener('click', function () {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+    /* Back-to-top button */
+    function backToTop() {
+        const btn = document.getElementById('backToTop');
+        if (!btn) return;
+        const onScroll = () => {
+            btn.classList.toggle('is-visible', window.scrollY > 600);
+        };
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     }
 
-    // ── Gallery Filter ─────────────────────────────────────────
-    const filterBtns  = document.querySelectorAll('.filter-btn');
-    const galleryItems = document.querySelectorAll('.gallery-item');
+    /* Gallery category filter */
+    function galleryFilter() {
+        const filters = document.getElementById('galFilters');
+        const grid = document.getElementById('galleryGrid');
+        if (!filters || !grid) return;
 
-    if (filterBtns.length > 0) {
-        filterBtns.forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                filterBtns.forEach(function (b) { b.classList.remove('active'); });
-                btn.classList.add('active');
+        const items = grid.querySelectorAll('.gallery-item');
 
-                const filter = btn.getAttribute('data-filter');
+        filters.addEventListener('click', (e) => {
+            const btn = e.target.closest('.gal-filter');
+            if (!btn) return;
 
-                galleryItems.forEach(function (item) {
-                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                        item.style.display = '';
-                        item.style.animation = 'fadeIn 0.4s ease';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-    }
+            filters.querySelectorAll('.gal-filter').forEach(b => b.classList.remove('is-active'));
+            btn.classList.add('is-active');
 
-    // ── Scroll-Reveal Animations ───────────────────────────────
-    const revealElements = document.querySelectorAll(
-        '.service-card, .package-card, .testimonial-card, .value-card, .process-step, .brand-item, .info-card'
-    );
-
-    const observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = entry.target.style.transform.replace('translateY(30px)', 'translateY(0)');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-    revealElements.forEach(function (el) {
-        el.style.opacity = '0';
-        el.style.transform = (el.style.transform || '') + ' translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-
-    // ── Contact Form Validation ────────────────────────────────
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        const inputs = contactForm.querySelectorAll('input[required], textarea[required]');
-
-        inputs.forEach(function (input) {
-            input.addEventListener('blur', function () {
-                validateField(input);
-            });
-            input.addEventListener('input', function () {
-                if (input.classList.contains('error')) {
-                    validateField(input);
+            const cat = btn.dataset.filter;
+            items.forEach(item => {
+                const match = cat === 'all' || item.dataset.cat === cat;
+                item.style.transition = 'opacity .35s ease, transform .35s ease';
+                if (match) {
+                    item.style.display = '';
+                    requestAnimationFrame(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = '';
+                    });
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.96)';
+                    setTimeout(() => { item.style.display = 'none'; }, 320);
                 }
             });
         });
+    }
 
-        contactForm.addEventListener('submit', function (e) {
-            let valid = true;
-            inputs.forEach(function (input) {
-                if (!validateField(input)) valid = false;
+    /* Smooth-scroll for in-page anchors with sticky-header offset */
+    function smoothAnchors() {
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', (e) => {
+                const id = a.getAttribute('href');
+                if (id.length < 2) return;
+                const target = document.querySelector(id);
+                if (!target) return;
+                e.preventDefault();
+                const offset = 90;
+                const top = target.getBoundingClientRect().top + window.scrollY - offset;
+                window.scrollTo({ top, behavior: 'smooth' });
             });
-            if (!valid) e.preventDefault();
         });
-
-        function validateField(field) {
-            const val = field.value.trim();
-            let ok = val.length > 0;
-            if (field.type === 'email') {
-                ok = ok && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
-            }
-            field.style.borderColor = ok ? '' : 'rgba(220,50,50,0.6)';
-            field.classList.toggle('error', !ok);
-            return ok;
-        }
     }
-
-    // ── Hero Parallax ──────────────────────────────────────────
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        window.addEventListener('scroll', function () {
-            const scrollY = window.scrollY;
-            if (scrollY < window.innerHeight) {
-                hero.style.backgroundPositionY = scrollY * 0.4 + 'px';
-            }
-        }, { passive: true });
-    }
-
-    // ── Smooth counter animation for stats ─────────────────────
-    const statNumbers = document.querySelectorAll('.stat-number, .highlight-number, .exp-number');
-
-    const counterObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-                const el = entry.target;
-                const text = el.textContent;
-                const numMatch = text.match(/[\d,]+/);
-                if (!numMatch) return;
-
-                const target = parseInt(numMatch[0].replace(',', ''));
-                const suffix = text.replace(numMatch[0], '');
-                let current = 0;
-                const increment = Math.ceil(target / 50);
-                const timer = setInterval(function () {
-                    current = Math.min(current + increment, target);
-                    el.textContent = current.toLocaleString() + suffix;
-                    if (current >= target) clearInterval(timer);
-                }, 30);
-
-                counterObserver.unobserve(el);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    statNumbers.forEach(function (el) {
-        counterObserver.observe(el);
-    });
-
-});
+})();

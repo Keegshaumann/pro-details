@@ -1,91 +1,60 @@
 <?php
-$page_title = 'Gallery';
+$page_title = 'Work';
 include 'includes/header.php';
+
+$items = [
+    ['cat' => 'correction', 'title' => 'Porsche 911',     'sub' => 'Two-stage correction',   'img' => 'photo-1503376780353-7e6692767b70', 'span' => 'g-1'],
+    ['cat' => 'coating',    'title' => 'Audi R8',         'sub' => '5yr ceramic coating',    'img' => 'photo-1583121274602-3e2820c69888', 'span' => 'g-3'],
+    ['cat' => 'detail',     'title' => 'Mustang GT',      'sub' => 'Premium full detail',    'img' => 'photo-1494976388531-d1058494cdd8', 'span' => 'g-4'],
+    ['cat' => 'ppf',        'title' => 'McLaren 720S',    'sub' => 'PPF + ceramic combo',    'img' => 'photo-1544636331-e26879cd4d9b', 'span' => 'g-5'],
+    ['cat' => 'interior',   'title' => 'Range Rover',     'sub' => 'Interior reset',         'img' => 'photo-1606664515524-ed2f786a0bd6', 'span' => 'g-6'],
+    ['cat' => 'detail',     'title' => 'BMW M3',          'sub' => 'Wheels-off detail',      'img' => 'photo-1525609004556-c46c7d6cf023', 'span' => 'g-7'],
+    ['cat' => 'correction', 'title' => 'Mercedes C-Class','sub' => 'Single-stage polish',    'img' => 'photo-1542362567-b07e54358753', 'span' => 'g-2'],
+    ['cat' => 'coating',    'title' => 'BMW G80 M3',      'sub' => '9yr ceramic system',     'img' => 'photo-1555215695-3004980ad54e', 'span' => 'g-5'],
+    ['cat' => 'detail',     'title' => 'Volkswagen Golf', 'sub' => 'Premium package',        'img' => 'photo-1605559424843-9e4c228bf1c2', 'span' => 'g-6'],
+    ['cat' => 'interior',   'title' => 'Mercedes GLE',    'sub' => 'Leather restoration',    'img' => 'photo-1606664515524-ed2f786a0bd6', 'span' => 'g-7'],
+    ['cat' => 'ppf',        'title' => 'Aston Martin',    'sub' => 'Front-end PPF',          'img' => 'photo-1492144534655-ae79c964c9d7', 'span' => 'g-8'],
+    ['cat' => 'correction', 'title' => 'Audi RS6',        'sub' => 'Three-stage correction', 'img' => 'photo-1607860108855-64acf2078ed9', 'span' => 'g-9'],
+];
 ?>
 
-<!-- Page Hero -->
+<!-- PAGE HERO -->
 <section class="page-hero">
-    <div class="page-hero-overlay"></div>
-    <div class="container page-hero-content">
-        <span class="section-tag">Our Work</span>
-        <h1>The <span class="gold-text">Gallery</span></h1>
-        <p>Real cars. Real results. See the Pro Details difference.</p>
+    <div class="container">
+        <div class="page-hero-grid">
+            <div class="reveal">
+                <div class="crumbs">
+                    <a href="index.php">Studio</a>
+                    <span class="sep">/</span>
+                    <span>Work</span>
+                </div>
+                <span class="eyebrow cognac">— Selected · 03</span>
+                <h1 class="display-1" style="margin-top:0.6rem;">Recent<br><em>work.</em></h1>
+                <p class="lede" style="margin-top:1.5rem;">A rolling archive of cars that have come through the bay. Filter by service to narrow it down.</p>
+            </div>
+            <div class="page-hero-image reveal reveal-d2" style="background-image:url('https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=80');"></div>
+        </div>
     </div>
 </section>
 
-<!-- Gallery Filter -->
-<section class="section gallery-section">
+<!-- GALLERY -->
+<section class="gallery-strip">
     <div class="container">
-        <div class="gallery-filters">
-            <button class="filter-btn active" data-filter="all">All Work</button>
-            <button class="filter-btn" data-filter="exterior">Exterior</button>
-            <button class="filter-btn" data-filter="interior">Interior</button>
-            <button class="filter-btn" data-filter="correction">Paint Correction</button>
-            <button class="filter-btn" data-filter="ceramic">Ceramic Coating</button>
+        <div class="gal-filters reveal" id="galFilters">
+            <button class="gal-filter is-active" data-filter="all">All Work</button>
+            <button class="gal-filter" data-filter="correction">Paint Correction</button>
+            <button class="gal-filter" data-filter="coating">Ceramic Coating</button>
+            <button class="gal-filter" data-filter="ppf">PPF</button>
+            <button class="gal-filter" data-filter="interior">Interior</button>
+            <button class="gal-filter" data-filter="detail">Full Detail</button>
         </div>
 
         <div class="gallery-grid" id="galleryGrid">
-            <!-- Gallery items - replace src with real images -->
-            <?php
-            $gallery_items = [
-                ['category' => 'correction', 'title' => 'BMW 3 Series — Paint Correction', 'desc' => 'Full paint correction removing swirls and scratches'],
-                ['category' => 'exterior', 'title' => 'Mercedes C-Class — Full Exterior Detail', 'desc' => 'Hand wash, clay bar and paint sealant'],
-                ['category' => 'ceramic', 'title' => 'Audi Q5 — Ceramic Coating', 'desc' => '2-year ceramic coating with paint correction'],
-                ['category' => 'interior', 'title' => 'BMW X5 — Interior Restoration', 'desc' => 'Full leather clean, condition and steam clean'],
-                ['category' => 'correction', 'title' => 'VW Golf GTI — Paint Correction', 'desc' => 'Single stage correction and wax'],
-                ['category' => 'exterior', 'title' => 'Toyota Land Cruiser — Full Detail', 'desc' => 'Premium package exterior & interior'],
-                ['category' => 'ceramic', 'title' => 'Porsche 911 — PPF + Ceramic', 'desc' => 'Full bonnet PPF with ceramic coating'],
-                ['category' => 'interior', 'title' => 'Range Rover — Interior Detail', 'desc' => 'Deep clean, odour treatment and leather conditioning'],
-                ['category' => 'correction', 'title' => 'Ford Mustang — Multi-Stage Correction', 'desc' => '3-stage paint correction to perfection'],
-                ['category' => 'exterior', 'title' => 'Jeep Wrangler — Exterior Detail', 'desc' => 'Full exterior decontamination and protection'],
-                ['category' => 'ceramic', 'title' => 'Tesla Model 3 — Ceramic Coating', 'desc' => 'Paint correction and 5-year ceramic coating'],
-                ['category' => 'interior', 'title' => 'Audi A4 — Interior Steam Clean', 'desc' => 'Full interior steam clean and shampoo'],
-            ];
-
-            $icons = [
-                'exterior' => 'fa-car',
-                'interior' => 'fa-couch',
-                'correction' => 'fa-magic',
-                'ceramic' => 'fa-layer-group',
-            ];
-
-            foreach ($gallery_items as $index => $item):
-            ?>
-            <div class="gallery-item" data-category="<?php echo $item['category']; ?>">
-                <div class="gallery-placeholder">
-                    <i class="fas <?php echo $icons[$item['category']]; ?>"></i>
-                    <p>Add Photo Here</p>
-                </div>
-                <div class="gallery-overlay">
-                    <div class="gallery-info">
-                        <h4><?php echo $item['title']; ?></h4>
-                        <p><?php echo $item['desc']; ?></p>
-                    </div>
-                </div>
+            <?php foreach ($items as $item): ?>
+            <div class="gallery-item <?php echo $item['span']; ?> reveal" data-cat="<?php echo $item['cat']; ?>" style="background-image:url('https://images.unsplash.com/<?php echo $item['img']; ?>?auto=format&fit=crop&w=1200&q=80');">
+                <span class="gallery-caption"><?php echo $item['title']; ?> · <?php echo $item['sub']; ?></span>
             </div>
             <?php endforeach; ?>
-        </div>
-
-        <!-- Upload Prompt -->
-        <div class="gallery-upload-note">
-            <div class="upload-note-inner">
-                <i class="fas fa-camera"></i>
-                <h3>Ready to Showcase Your Work?</h3>
-                <p>Replace the placeholder images above with your real before/after photos. Each tile accepts a standard JPG or PNG image.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-banner">
-    <div class="cta-overlay"></div>
-    <div class="container cta-content">
-        <h2>Want Results Like <span class="gold-text">These?</span></h2>
-        <p>Book your detail today and join hundreds of satisfied Pro Details customers.</p>
-        <div class="cta-buttons">
-            <a href="contact.php" class="btn btn-gold">Book a Detail</a>
-            <a href="services.php" class="btn btn-white">View Services</a>
         </div>
     </div>
 </section>
