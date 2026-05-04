@@ -53,12 +53,10 @@ body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
-    background-image:
-        radial-gradient(ellipse 80% 50% at 20% 0%, rgba(184, 188, 192, 0.06) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 50% at 90% 100%, rgba(232, 233, 234, 0.04) 0%, transparent 55%);
 }
 
 body::before { content: none; }
+body::after { content: none; }
 
 img, svg, video { display: block; max-width: 100%; height: auto; }
 
@@ -225,6 +223,11 @@ h1, h2, h3, h4, h5 { font-family: var(--serif); font-weight: 400; line-height: 1
     /* Drops white PNG bg + recolours logo to silver on the black panel */
     filter: invert(1) grayscale(1) brightness(1.15) contrast(1.05);
     mix-blend-mode: lighten;
+}
+.brand-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 .brand-word { display: flex; flex-direction: column; line-height: 1.05; }
 .brand-name {

@@ -4,6 +4,9 @@ $site_phone = '+27 82 555 0123';
 $site_phone_link = '+27825550123';
 $site_whatsapp = '27825550123';
 $site_email = 'hello@prodetails.co.za';
+$logo_file = __DIR__ . '/../assets/img/logo.png';
+$has_logo = file_exists($logo_file);
+$logo_v = $has_logo ? @filemtime($logo_file) : 0;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,9 +44,6 @@ $site_email = 'hello@prodetails.co.za';
 <header class="site-header" id="siteHeader">
     <div class="container nav-container">
         <a href="index.php" class="brand" aria-label="Pro Details home">
-            <span class="brand-mark" aria-hidden="true">
-                <img src="/assets/img/logo.png" alt="" class="brand-logo">
-            </span>
             <span class="brand-word">
                 <span class="brand-name">Pro Details</span>
                 <span class="brand-sub">Automotive Studio · Centurion</span>
