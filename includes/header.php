@@ -42,7 +42,7 @@ $site_email = 'hello@prodetails.co.za';
     <div class="container nav-container">
         <a href="index.php" class="brand" aria-label="Pro Details home">
             <span class="brand-mark" aria-hidden="true">
-                <svg viewBox="0 0 40 40" width="36" height="36"><circle cx="20" cy="20" r="18.5" fill="none" stroke="currentColor" stroke-width="1"/><text x="20" y="26" font-family="Instrument Serif, Georgia, serif" font-size="22" font-style="italic" text-anchor="middle" fill="currentColor">P</text></svg>
+                <img src="/assets/img/logo.png" alt="" class="brand-logo">
             </span>
             <span class="brand-word">
                 <span class="brand-name">Pro Details</span>
