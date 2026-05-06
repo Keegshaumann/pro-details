@@ -31,17 +31,36 @@
         const menu = document.getElementById('navMenu');
         if (!toggle || !menu) return;
 
+        let scrollY = 0;
+
+        const lockScroll = () => {
+            scrollY = window.scrollY;
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollY}px`;
+            document.body.style.left = '0';
+            document.body.style.right = '0';
+            document.body.style.width = '100%';
+        };
+        const unlockScroll = () => {
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.left = '';
+            document.body.style.right = '';
+            document.body.style.width = '';
+            window.scrollTo(0, scrollY);
+        };
+
         const close = () => {
             toggle.classList.remove('is-open');
             menu.classList.remove('is-open');
             toggle.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
+            unlockScroll();
         };
         const open = () => {
             toggle.classList.add('is-open');
             menu.classList.add('is-open');
             toggle.setAttribute('aria-expanded', 'true');
-            document.body.style.overflow = 'hidden';
+            lockScroll();
         };
 
         toggle.addEventListener('click', () => {
@@ -52,6 +71,11 @@
 
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && menu.classList.contains('is-open')) close();
+        });
+
+        const mq = window.matchMedia('(min-width: 769px)');
+        mq.addEventListener('change', (e) => {
+            if (e.matches && menu.classList.contains('is-open')) close();
         });
     }
 
