@@ -840,7 +840,7 @@ h1, h2, h3, h4, h5 { font-family: var(--serif); font-weight: 400; line-height: 1
 .pkg-price-amt {
     font-family: var(--serif);
     font-size: clamp(2.4rem, 3.5vw, 3rem);
-    color: var(--bone);
+    color: var(--ink);
 }
 .pkg-price-amt em { color: var(--cognac-warm); font-style: italic; }
 .pkg-desc { color: rgba(217, 220, 223, 0.7); font-size: 0.95rem; max-width: 28ch; }
