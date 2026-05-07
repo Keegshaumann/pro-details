@@ -217,7 +217,7 @@ include 'includes/header.php';
                 <span class="eyebrow" style="color:var(--cognac-warm);">Three Tiers</span>
             </div>
             <div>
-                <h2 class="display-2" style="color:#ffffff;">Transparent pricing.<br>No <em>surprises.</em></h2>
+                <h2 class="display-2" style="color:rgba(255,255,255,1);">Transparent pricing.<br>No <em>surprises.</em></h2>
                 <p class="lede" style="color:rgba(244,239,230,0.85);margin-top:1.2rem;">Final pricing confirmed at inspection — but these are the studio rates.</p>
             </div>
         </div>
@@ -228,7 +228,7 @@ include 'includes/header.php';
                 <h3 class="pkg-name">Essential</h3>
                 <div class="pkg-price">
                     <span class="pkg-price-from">from</span>
-                    <span class="pkg-price-amt">R<em>450</em></span>
+                    <span class="pkg-price-amt" style="color:rgba(255,255,255,1);">R<em>450</em></span>
                 </div>
                 <p class="pkg-desc">A hand wash and refresh for the daily driver between full details.</p>
                 <ul class="pkg-features">
@@ -248,7 +248,7 @@ include 'includes/header.php';
                 <h3 class="pkg-name">Premium</h3>
                 <div class="pkg-price">
                     <span class="pkg-price-from">from</span>
-                    <span class="pkg-price-amt">R<em>1,200</em></span>
+                    <span class="pkg-price-amt" style="color:rgba(255,255,255,1);">R<em>1,200</em></span>
                 </div>
                 <p class="pkg-desc">A complete inside-and-out detail with paint protection. Our most popular booking.</p>
                 <ul class="pkg-features">
@@ -268,7 +268,7 @@ include 'includes/header.php';
                 <h3 class="pkg-name">Ultimate</h3>
                 <div class="pkg-price">
                     <span class="pkg-price-from">from</span>
-                    <span class="pkg-price-amt">R<em>3,500</em></span>
+                    <span class="pkg-price-amt" style="color:rgba(255,255,255,1);">R<em>3,500</em></span>
                 </div>
                 <p class="pkg-desc">Full correction, ceramic coating and the works. For the long-term keepers.</p>
                 <ul class="pkg-features">
