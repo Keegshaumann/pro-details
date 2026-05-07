@@ -216,9 +216,14 @@ include 'includes/header.php';
                 <span class="num" style="color:rgba(244,239,230,0.55);">— Packages · 04</span>
                 <span class="eyebrow" style="color:var(--cognac-warm);">Three Tiers</span>
             </div>
-            <div>
-                <h2 class="display-2" style="color:#ffffff !important;">TESTING.<br>No <em style="color:#ffffff !important;">surprises.</em></h2>
-                <p class="lede" style="color:rgba(244,239,230,0.85);margin-top:1.2rem;">Final pricing confirmed at inspection — but these are the studio rates.</p>
+            <div class="pkg-heading-fresh" style="display:block;">
+                <h2 style="color:#ffffff !important; font-family:var(--serif); font-weight:300; font-size:clamp(2.4rem, 6vw, 5rem); line-height:0.98; letter-spacing:-0.03em; margin:0;">
+                    Honest rates.<br>
+                    <span style="color:#ffffff !important; font-style:italic;">No games.</span>
+                </h2>
+                <p style="color:#ffffff !important; opacity:0.85; margin-top:1.2rem; font-size:1.1rem; line-height:1.5;">
+                    Final pricing confirmed at inspection — but these are the studio rates.
+                </p>
             </div>
         </div>
 
