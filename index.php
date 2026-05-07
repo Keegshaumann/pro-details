@@ -211,21 +211,7 @@ include 'includes/header.php';
 <!-- PACKAGES -->
 <section class="packages section">
     <div class="container">
-        <div class="section-head">
-            <div class="section-head-meta">
-                <span class="num" style="color:rgba(244,239,230,0.55);">— Packages · 04</span>
-                <span class="eyebrow" style="color:var(--cognac-warm);">Three Tiers</span>
-            </div>
-            <div class="pkg-heading-fresh" style="display:block;">
-                <h2 style="color:#ffffff !important; font-family:var(--serif); font-weight:300; font-size:clamp(2.4rem, 6vw, 5rem); line-height:0.98; letter-spacing:-0.03em; margin:0;">
-                    Honest rates.<br>
-                    <span style="color:#ffffff !important; font-style:italic;">No games.</span>
-                </h2>
-                <p style="color:#ffffff !important; opacity:0.85; margin-top:1.2rem; font-size:1.1rem; line-height:1.5;">
-                    Final pricing confirmed at inspection — but these are the studio rates.
-                </p>
-            </div>
-        </div>
+        
 
         <div class="pkg-grid reveal">
             <div class="pkg">
