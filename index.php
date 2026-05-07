@@ -217,7 +217,7 @@ include 'includes/header.php';
                 <span class="eyebrow" style="color:var(--cognac-warm);">Three Tiers</span>
             </div>
             <div>
-                <h2 class="display-2" style="color:rgba(244,239,230,0.85);">Transparent TEST.<br>No <em>surprises.</em></h2>
+                <h2 class="display-2" style="color:rgba(244,239,230,0.85);">Transparent    TEST.<br>No <em>surprises.</em></h2>
                 <p class="lede" style="color:rgba(244,239,230,0.85);margin-top:1.2rem;">Final pricing confirmed at inspection — but these are the studio rates.</p>
             </div>
         </div>
